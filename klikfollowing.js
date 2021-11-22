@@ -1,0 +1,1 @@
+document.getElementsByClassName("-nal3")[2].click();
