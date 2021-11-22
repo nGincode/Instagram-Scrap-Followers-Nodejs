@@ -1,3 +1,2 @@
-//Atur di scrool instagram
-var nilai = 2;
-document.getElementsByTagName("ul")[nilai].scrollIntoView(false);
+//Atur di scrool instagram angka 1,2,3
+document.getElementsByTagName("ul")[2].scrollIntoView(false);

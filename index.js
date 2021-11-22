@@ -1,7 +1,7 @@
 const Nightmare = require('nightmare');
 const XlsxPopulate = require('xlsx-populate');
-const username = '6289509133696';
-const password = 'fni91199';
+const username = '*****';
+const password = '*******';
 
 
 const nighmare = Nightmare({
@@ -32,7 +32,7 @@ nighmare
     .wait('.m82CD')
     .wait(2000);
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 10000; i++) {
     nighmare
         .inject('js', 'scroolfollowers.js')
         .wait(1000);
@@ -44,17 +44,17 @@ nighmare
             var d = document.getElementsByClassName('d7ByH'); //div > span > a
             var e = [];
 
-            for (var xx = 0; xx < 100; xx++) {
-                e.push(d[xx].innerText);
+            for (var xx = 0; xx < 15000; xx++) {
+                e.push([d[xx].innerText, ]);
             }
-            return e;
             console.log(e);
+            return e;
         }
     )
     .then(function (data) {
         XlsxPopulate.fromBlankAsync()
             .then(workbook => {
-                workbook.sheet("Sheet1").cell("A1").value([data]);
+                workbook.sheet("Sheet1").cell("A1").value(data);
                 return workbook.toFileAsync("./out.xlsx")
             });
         console.dir(data);
